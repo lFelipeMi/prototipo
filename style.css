@@ -36,7 +36,7 @@ canvas {
     z-index: -1;
 }
 
-header, main, section#nossos_servicos {
+header, main {
     text-align: center;
     padding: 50px 20px 0;
     background-color: transparent;
@@ -74,11 +74,49 @@ nav ul {
     list-style: none;
 }
 
-/* Mensagem do Header */
-main, section#nossos_servicos {
+main {
     max-width: 50%;
     margin: 20px;
     text-align: justify;
+}
+section#nossos_servicos {
+    text-align: center;
+    padding: 50px 20px;
+    margin: 0 auto; /* Centraliza o texto */
+    text-align: justify;
+    background-size: cover; /* Faz o fundo ocupar toda a área */
+    background-repeat: no-repeat; /* Impede repetições */
+    background-position: center; /* Centraliza a imagem */
+    height: 100vh; /* Ocupa 100% da altura da tela */
+    width: 100vw; /* Garante que o fundo ocupe toda a largura */
+}
+
+/* Até 480px */
+@media screen and (max-width: 480px) {
+    section#nossos_servicos {
+        background-image: url(imagens/fundo1-pq480p.png);
+    }
+}
+  
+/* Até 720px */
+@media screen and (min-width: 481px) and (max-width: 720px) {
+    section#nossos_servicos {
+        background-image: url(imagens/fundo1-pq720p.png);
+    }
+}
+  
+/* Até 1080px */
+@media screen and (min-width: 721px) and (max-width: 1080px) {
+    section#nossos_servicos {
+        background-image: url(imagens/fundo1-pq.png);
+    }
+}
+  
+/* Mais de 1080px */
+@media screen and (min-width: 1081px) {
+    section#nossos_servicos {
+        background-image: url(imagens/fundo1-g.png);
+    }
 }
 
 main h2, section#nossos_servicos h2 {
@@ -91,15 +129,17 @@ main p, section#nossos_servicos p {
     text-indent: 20px;
     font-size: 18px;
     margin-bottom: 10px;
+    max-width: 40vw;
 }
 
 section#nossos_servicos ul {
-    list-style: none;
+    list-style-type: '\2714\00A0';
+    list-style-position: inside;
     font-size: 18px;
     margin-left: 30px;
+    max-width: 40vw;
 }
 
-/* Botão */
 .botao {
     background-color: var(--cor0);
     color: var(--cor5);
@@ -108,11 +148,13 @@ section#nossos_servicos ul {
     cursor: pointer;
 }
 
-/* Sessão Por Que Nos Contratar */
 section#por-que_contratar {
     padding: 50px 10%;
     text-align: center;
     background-image: url(imagens/fundo2-1200x800.jpeg);
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
 }
 
 section#por-que_contratar p {
@@ -216,11 +258,22 @@ section#por-que_contratar h2 {
     cursor: pointer;
 }
 
+.footer-indv a {
+    text-decoration: none;
+    font-size: 14px; /* Fonte menor para as listas */
+    line-height: 1.8;
+    color: #d9d9d9;
+    cursor: pointer;
+}
+
 .footer-indv ul li:hover {
     color: var(--cor0);
 }
 
-/* Responsividade para o rodapé em telas maiores */
+.footer-indv a:hover {
+    color: var(--cor0);
+}
+
 @media (min-width: 1024px) {
     .caixa2 {
         flex-direction: row;
